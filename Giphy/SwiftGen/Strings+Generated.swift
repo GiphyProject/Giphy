@@ -14,7 +14,11 @@ internal enum Str {
   ///   Giphy
   /// 
   ///   Created by Адель Ахметшин on 24.04.2023.
-  internal static let title = Str.tr("Localizable", "title", fallback: "First string")
+  internal static let titleMainViewController = Str.tr("Localizable", "titleMainViewController", fallback: "Popular GIFs")
+  /// Profile
+  internal static let titleProfileViewController = Str.tr("Localizable", "titleProfileViewController", fallback: "Profile")
+  /// Search for GIFs
+  internal static let titleSearchViewController = Str.tr("Localizable", "titleSearchViewController", fallback: "Search for GIFs")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

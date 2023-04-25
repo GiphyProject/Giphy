@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Giphy
+
+  Created by Адель Ахметшин on 24.04.2023.
+  
+*/
+
+"titleMainViewController" = "Popular GIFs";
+"titleSearchViewController" = "Search for GIFs";
+"titleProfileViewController" = "Profile";
