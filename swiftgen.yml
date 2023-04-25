@@ -12,10 +12,10 @@
 ##   SwiftGen will parse all `.strings` files found in that folder.
  strings:
    inputs:
-     - Giphy/Localizable.strings
+     - Giphy/SwiftGen/Localizable.strings
    outputs:
      - templateName: structured-swift5
-       output: Giphy/Strings+Generated.swift
+       output: Giphy/SwiftGen/Strings+Generated.swift
        params:
         enumName: Str
 
