@@ -25,6 +25,8 @@
 		77D9227829F7999800A1111E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9227729F7999800A1111E /* Extensions.swift */; };
 		77D9227A29F79A1B00A1111E /* GIPMainViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9227929F79A1B00A1111E /* GIPMainViewCollectionViewCell.swift */; };
 		77D9227C29F79B3300A1111E /* GIPMainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9227B29F79B3300A1111E /* GIPMainViewViewModel.swift */; };
+		77D9228529F8082000A1111E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9228429F8082000A1111E /* Coordinator.swift */; };
+		77D9228729F808E300A1111E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D9228629F808E300A1111E /* AppCoordinator.swift */; };
 		7967313929F6BDA5008D2D0D /* GIPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967313829F6BDA5008D2D0D /* GIPMainViewController.swift */; };
 		7967313B29F6BDBC008D2D0D /* GIPSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967313A29F6BDBC008D2D0D /* GIPSearchViewController.swift */; };
 		7967313D29F6BDCC008D2D0D /* GIPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967313C29F6BDCC008D2D0D /* GIPProfileViewController.swift */; };
@@ -74,6 +76,8 @@
 		77D9227729F7999800A1111E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		77D9227929F79A1B00A1111E /* GIPMainViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPMainViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		77D9227B29F79B3300A1111E /* GIPMainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPMainViewViewModel.swift; sourceTree = "<group>"; };
+		77D9228429F8082000A1111E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		77D9228629F808E300A1111E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7967313829F6BDA5008D2D0D /* GIPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPMainViewController.swift; sourceTree = "<group>"; };
 		7967313A29F6BDBC008D2D0D /* GIPSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPSearchViewController.swift; sourceTree = "<group>"; };
 		7967313C29F6BDCC008D2D0D /* GIPProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPProfileViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		77AB639929F6538B00D932D6 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				77D9228329F8080D00A1111E /* Coordinators */,
 				77D9228229F7A2CD00A1111E /* SwiftGen */,
 				7967313129F6B8AD008D2D0D /* Resources */,
 				77D9227429F798FD00A1111E /* Protocols */,
@@ -234,6 +239,15 @@
 				77AB63CF29F6746C00D932D6 /* Localizable.strings */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		77D9228329F8080D00A1111E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				77D9228429F8082000A1111E /* Coordinator.swift */,
+				77D9228629F808E300A1111E /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		7967312D29F6B876008D2D0D /* Controllers */ = {
@@ -573,9 +587,11 @@
 			files = (
 				77AB639F29F6538B00D932D6 /* GIPTabViewController.swift in Sources */,
 				77D9227329F78F2400A1111E /* Strings+Generated.swift in Sources */,
+				77D9228529F8082000A1111E /* Coordinator.swift in Sources */,
 				7967313B29F6BDBC008D2D0D /* GIPSearchViewController.swift in Sources */,
 				77AB639B29F6538B00D932D6 /* AppDelegate.swift in Sources */,
 				77AB639D29F6538B00D932D6 /* SceneDelegate.swift in Sources */,
+				77D9228729F808E300A1111E /* AppCoordinator.swift in Sources */,
 				77D9227C29F79B3300A1111E /* GIPMainViewViewModel.swift in Sources */,
 				77D9227829F7999800A1111E /* Extensions.swift in Sources */,
 				7967313D29F6BDCC008D2D0D /* GIPProfileViewController.swift in Sources */,
