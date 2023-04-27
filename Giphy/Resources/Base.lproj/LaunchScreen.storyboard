@@ -24,11 +24,20 @@
                                     <constraint firstAttribute="width" constant="256" id="qun-Cd-TEU"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIPHY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhs-uz-Ey5">
+                                <rect key="frame" x="124.00000000000001" y="624" width="145.33333333333337" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Mhs-uz-Ey5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="74O-Ii-zBm"/>
+                            <constraint firstItem="Mhs-uz-Ey5" firstAttribute="top" secondItem="1wf-T7-oGI" secondAttribute="bottom" constant="70" id="TOY-Ii-dW6"/>
                             <constraint firstItem="1wf-T7-oGI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ugk-Om-eyP"/>
+                            <constraint firstItem="Mhs-uz-Ey5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jZJ-Yw-FHB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mhs-uz-Ey5" secondAttribute="trailing" id="qf7-0M-egf"/>
                             <constraint firstItem="1wf-T7-oGI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wjB-Yz-d89"/>
                         </constraints>
                     </view>
