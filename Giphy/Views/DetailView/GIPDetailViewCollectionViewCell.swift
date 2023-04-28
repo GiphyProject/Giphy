@@ -1,18 +1,15 @@
 //
-//  GIPMainViewCollectionViewCell.swift
+//  GIPDetailViewCollectionViewCell.swift
 //  Giphy
 //
-//  Created by Адель Ахметшин on 25.04.2023.
+//  Created by Адель Ахметшин on 27.04.2023.
 //
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
-final class GIPMainViewCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "GIPMainViewCollectionViewCell"
+final class GIPDetailViewCollectionViewCell: UICollectionViewCell {
+    static let cellIdentifier = "GIPDetailViewCollectionViewCell"
     
     // MARK: - UI elements
      let imageView: UIImageView = {
@@ -28,7 +25,7 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
         embedView()
         setupBehavior()
         setupConstraints()
-        setUpLayer()
+        setupLayer()
     }
     
     required init?(coder: NSCoder) {
@@ -46,7 +43,7 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Settings CALayer
-    private func setUpLayer() {
+    private func setupLayer() {
         contentView.layer.cornerRadius = 10
         contentView.layer.shadowColor = UIColor.label.cgColor
         contentView.layer.shadowOffset = CGSize(width: -4, height: 4)
@@ -57,8 +54,9 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(130)
-            make.width.equalTo(160)
+            make.height.equalTo(150)
+            make.width.equalTo(150)
+            
         }
     }
     
@@ -67,16 +65,17 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        setUpLayer()
+        setupLayer()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
         imageView.image = nil
     }
     
     // MARK: - Configure cells
     public func configure(_ image: UIImage) {
-        imageView.image = image
+//        imageView.image = image
     }
 }
