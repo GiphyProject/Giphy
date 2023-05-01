@@ -7,13 +7,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     
-    static let cellIdentifier = "MainViewCollectionViewCell"
+    static let cellIdentifier = "GIPMainViewCollectionViewCell"
     
     // MARK: - UI elements
-    private let imageView: UIImageView = {
+     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -57,7 +59,6 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.height.equalTo(130)
             make.width.equalTo(160)
-            
         }
     }
     
@@ -71,12 +72,11 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         imageView.image = nil
     }
     
     // MARK: - Configure cells
-    public func configure() {
-        
+    public func configure(_ image: UIImage) {
+        imageView.image = image
     }
 }

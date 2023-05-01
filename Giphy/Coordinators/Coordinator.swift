@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var navigationController: UINavigationController { get set }
     
-    func start()
+    func start() -> UIViewController
 }

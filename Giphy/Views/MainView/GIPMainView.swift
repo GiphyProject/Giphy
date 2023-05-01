@@ -11,14 +11,14 @@ import SnapKit
 final class GIPMainView: UIView {
     
     private let viewModel = GIPMainViewViewModel()
+    var coordinator: MainCoordinator?
     
     // MARK: - UI elements
-    private let collectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
         return collectionView
     }()
     
@@ -41,8 +41,6 @@ final class GIPMainView: UIView {
     
     // MARK: - Setup behavior
     private func setupBehavior() {
-        collectionView.delegate = viewModel
-        collectionView.dataSource = viewModel
         collectionView.collectionViewLayout = createCompositionLayout()
         collectionView.register(
             GIPMainViewCollectionViewCell.self,
@@ -52,10 +50,10 @@ final class GIPMainView: UIView {
     
     // MARK: - Create composition layout
     private func createCompositionLayout() -> UICollectionViewLayout {
-            return UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection? in
-                return self.createSection()
-            }
+        return UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection? in
+            return self.createSection()
         }
+    }
     
     private func createSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
