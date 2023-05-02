@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Str {
+  /// ?api_key=BYE4QVgVRnoWvrhBi9WuBya9RazSH4yT
+  internal static let apiKey = Str.tr("Localizable", "apiKey", fallback: "?api_key=BYE4QVgVRnoWvrhBi9WuBya9RazSH4yT")
+  /// https://api.giphy.com/v1/gifs/trending
+  internal static let baseAPIRUL = Str.tr("Localizable", "baseAPIRUL", fallback: "https://api.giphy.com/v1/gifs/trending")
+  /// &limit=
+  internal static let limit = Str.tr("Localizable", "limit", fallback: "&limit=")
+  /// 10
+  internal static let requestNumber = Str.tr("Localizable", "requestNumber", fallback: "10")
   /// Localizable.strings
   ///   Giphy
   /// 

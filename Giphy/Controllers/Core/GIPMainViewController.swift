@@ -26,6 +26,7 @@ final class GIPMainViewController: UIViewController {
         setupBehavior()
         setupConstraints()
         setupCollectionView()
+        viewModel?.fetchData()
     }
     
     // MARK: - Embed view

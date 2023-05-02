@@ -6,6 +6,7 @@ disabled_rules:
   - self_in_property_initialization
   - identifier_name
   - void_function_in_ternary
+  - type_name
 opt_in_rules:
   - empty_count
   - missing_docs

@@ -9,3 +9,7 @@
 "titleMainViewController" = "Popular GIFs";
 "titleSearchViewController" = "Search for GIFs";
 "titleProfileViewController" = "Profile";
+"baseAPIRUL" = "https://api.giphy.com/v1/gifs/trending";
+"apiKey" = "?api_key=BYE4QVgVRnoWvrhBi9WuBya9RazSH4yT";
+"limit" = "&limit=";
+"requestNumber" = "10";

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		034FDDB75410165B29A9393D /* Pods_Giphy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F26938FF0BD617C385272D2 /* Pods_Giphy.framework */; };
 		508E38F3226CE889BBEA4902 /* Pods_GiphyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB52E9247BCF6A0F053F81FE /* Pods_GiphyTests.framework */; };
+		7705CCAF2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCAE2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift */; };
+		7705CCB12A01578100F33D80 /* GIPMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB02A01578100F33D80 /* GIPMainModel.swift */; };
+		7705CCB42A01589A00F33D80 /* GIPNetworkServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB32A01589A00F33D80 /* GIPNetworkServiceExtensions.swift */; };
+		7705CCB62A015A7700F33D80 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB52A015A7700F33D80 /* NetworkService.swift */; };
 		7715C17329FA5136003A48CB /* GIPDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715C17229FA5136003A48CB /* GIPDetailView.swift */; };
 		7715C17929FA7CA8003A48CB /* GIPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715C17829FA7CA8003A48CB /* GIPDetailViewController.swift */; };
 		77AB639B29F6538B00D932D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB639A29F6538B00D932D6 /* AppDelegate.swift */; };
@@ -60,6 +64,10 @@
 		18E3F00DC0AC454484FD49A8 /* Pods-Giphy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy.release.xcconfig"; path = "Target Support Files/Pods-Giphy/Pods-Giphy.release.xcconfig"; sourceTree = "<group>"; };
 		4E27C435C7C3B63E0D5C7273 /* Pods-GiphyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphyTests/Pods-GiphyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F26938FF0BD617C385272D2 /* Pods_Giphy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7705CCAE2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPNetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		7705CCB02A01578100F33D80 /* GIPMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPMainModel.swift; sourceTree = "<group>"; };
+		7705CCB32A01589A00F33D80 /* GIPNetworkServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPNetworkServiceExtensions.swift; sourceTree = "<group>"; };
+		7705CCB52A015A7700F33D80 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7715C17229FA5136003A48CB /* GIPDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPDetailView.swift; sourceTree = "<group>"; };
 		7715C17829FA7CA8003A48CB /* GIPDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPDetailViewController.swift; sourceTree = "<group>"; };
 		77AB639729F6538B00D932D6 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +144,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7705CCB22A01585300F33D80 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7705CCAE2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift */,
+				7705CCB32A01589A00F33D80 /* GIPNetworkServiceExtensions.swift */,
+				7705CCB52A015A7700F33D80 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		7715C17129FA511C003A48CB /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +190,7 @@
 				77D9228329F8080D00A1111E /* Coordinators */,
 				77D9228229F7A2CD00A1111E /* SwiftGen */,
 				7967313129F6B8AD008D2D0D /* Resources */,
-				77D9227429F798FD00A1111E /* Protocols */,
+				77D9227429F798FD00A1111E /* Services */,
 				7967313029F6B894008D2D0D /* ViewModels */,
 				7967312F29F6B88F008D2D0D /* Views */,
 				7967312E29F6B889008D2D0D /* Models */,
@@ -199,11 +217,12 @@
 			path = GiphyUITests;
 			sourceTree = "<group>";
 		};
-		77D9227429F798FD00A1111E /* Protocols */ = {
+		77D9227429F798FD00A1111E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7705CCB22A01585300F33D80 /* NetworkService */,
 			);
-			path = Protocols;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		77D9227D29F79E8E00A1111E /* MainView */ = {
@@ -245,6 +264,7 @@
 		77D9228129F79ECA00A1111E /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				7705CCB02A01578100F33D80 /* GIPMainModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -605,6 +625,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7705CCB62A015A7700F33D80 /* NetworkService.swift in Sources */,
+				7705CCB42A01589A00F33D80 /* GIPNetworkServiceExtensions.swift in Sources */,
 				79A7622E29F944F900FCC907 /* XCAssets+Generated.swift in Sources */,
 				77AB639F29F6538B00D932D6 /* GIPTabViewController.swift in Sources */,
 				77D9227329F78F2400A1111E /* Strings+Generated.swift in Sources */,
@@ -617,8 +639,10 @@
 				77B8AD9829FAD1F200C80CFE /* SearchCoordinator.swift in Sources */,
 				77D9227C29F79B3300A1111E /* GIPMainViewViewModel.swift in Sources */,
 				77D9227829F7999800A1111E /* Extensions.swift in Sources */,
+				7705CCAF2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift in Sources */,
 				7967313D29F6BDCC008D2D0D /* GIPProfileViewController.swift in Sources */,
 				77AB63A529F6538B00D932D6 /* Giphy.xcdatamodeld in Sources */,
+				7705CCB12A01578100F33D80 /* GIPMainModel.swift in Sources */,
 				77D9227629F7991400A1111E /* GIPMainView.swift in Sources */,
 				7967313929F6BDA5008D2D0D /* GIPMainViewController.swift in Sources */,
 				7715C17929FA7CA8003A48CB /* GIPDetailViewController.swift in Sources */,
