@@ -1,5 +1,3 @@
-
-
 import Foundation
 
 // MARK: - Welcome
@@ -11,22 +9,18 @@ struct GIPMainModel: Codable {
 
 // MARK: - Datum
 struct Datum: Codable {
-    let type: TypeEnum
-    let id: String
+    let type, id: String
     let url: String
     let slug: String
     let bitlyGIFURL, bitlyURL: String
     let embedURL: String
     let username: String
     let source: String
-    let title: String
-    let rating: Rating
-    let contentURL, sourceTLD: String
+    let title, rating, contentURL, sourceTLD: String
     let sourcePostURL: String
     let isSticker: Int
     let importDatetime, trendingDatetime: String
     let images: Images
-    let user: User?
     let analyticsResponsePayload: String
     let analytics: Analytics
 
@@ -42,7 +36,7 @@ struct Datum: Codable {
         case isSticker = "is_sticker"
         case importDatetime = "import_datetime"
         case trendingDatetime = "trending_datetime"
-        case images, user
+        case images
         case analyticsResponsePayload = "analytics_response_payload"
         case analytics
     }
@@ -62,7 +56,7 @@ struct Onclick: Codable {
 struct Images: Codable {
     let original: FixedHeight
     let downsized, downsizedLarge, downsizedMedium: The480_WStill
-    let downsizedSmall: The4_K
+    let downsizedSmall: DownsizedSmall
     let downsizedStill: The480_WStill
     let fixedHeight, fixedHeightDownsampled, fixedHeightSmall: FixedHeight
     let fixedHeightSmallStill, fixedHeightStill: The480_WStill
@@ -70,9 +64,8 @@ struct Images: Codable {
     let fixedWidthSmallStill, fixedWidthStill: The480_WStill
     let looping: Looping
     let originalStill: The480_WStill
-    let originalMp4, preview: The4_K
+    let originalMp4, preview: DownsizedSmall
     let previewGIF, previewWebp, the480WStill: The480_WStill
-    let hd, the4K: The4_K?
 
     enum CodingKeys: String, CodingKey {
         case original, downsized
@@ -97,8 +90,6 @@ struct Images: Codable {
         case previewGIF = "preview_gif"
         case previewWebp = "preview_webp"
         case the480WStill = "480w_still"
-        case hd
-        case the4K = "4k"
     }
 }
 
@@ -108,8 +99,8 @@ struct The480_WStill: Codable {
     let url: String
 }
 
-// MARK: - The4_K
-struct The4_K: Codable {
+// MARK: - DownsizedSmall
+struct DownsizedSmall: Codable {
     let height, width, mp4Size: String
     let mp4: String
 
@@ -150,38 +141,6 @@ struct Looping: Codable {
     }
 }
 
-enum Rating: String, Codable {
-    case g = "g"
-}
-
-enum TypeEnum: String, Codable {
-    case gif = "gif"
-}
-
-// MARK: - User
-struct User: Codable {
-    let avatarURL: String
-    let bannerImage, bannerURL: String
-    let profileURL: String
-    let username, displayName, description: String
-    let instagramURL: String
-    let websiteURL: String
-    let isVerified: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case avatarURL = "avatar_url"
-        case bannerImage = "banner_image"
-        case bannerURL = "banner_url"
-        case profileURL = "profile_url"
-        case username
-        case displayName = "display_name"
-        case description
-        case instagramURL = "instagram_url"
-        case websiteURL = "website_url"
-        case isVerified = "is_verified"
-    }
-}
-
 // MARK: - Meta
 struct Meta: Codable {
     let status: Int
@@ -202,3 +161,4 @@ struct Pagination: Codable {
         case count, offset
     }
 }
+

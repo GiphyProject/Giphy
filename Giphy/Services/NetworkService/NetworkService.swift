@@ -9,7 +9,6 @@ import Foundation
 
 final class NetworkService: GIPNetworkServiceProtocol {
     
-    
     func getAnimations(completion: @escaping (Result<GIPMainModel, Error>) -> Void) {
         createRequest(with: URL(string: Str.baseAPIRUL + Str.apiKey + Str.limit + Str.requestNumber), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -21,7 +20,6 @@ final class NetworkService: GIPNetworkServiceProtocol {
                     let gifs = try JSONDecoder().decode(GIPMainModel.self, from: data)
                     completion(.success(gifs))
                 } catch {
-                    print(Str.baseAPIRUL + Str.apiKey + Str.limit + Str.requestNumber)
                     completion(.failure(error))
                 }
             }

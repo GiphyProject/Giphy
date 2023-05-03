@@ -17,8 +17,6 @@ final class GIPMainViewController: UIViewController {
     var viewModel: GIPMainViewViewModel?
     var coordinator: MainCoordinator?
     
-    var items = Observable.of([UIImage(systemName: "house"), UIImage(systemName: "pencil.circle")])
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,7 @@ final class GIPMainViewController: UIViewController {
         setupBehavior()
         setupConstraints()
         setupCollectionView()
-        viewModel?.fetchData()
+        viewModel?.fetchData(mainView)
     }
     
     // MARK: - Embed view
@@ -49,13 +47,6 @@ final class GIPMainViewController: UIViewController {
     
     // MARK: - Setup collection view
     func setupCollectionView() {
-        items
-            .bind(to: mainView.collectionView.rx.items(
-                cellIdentifier: GIPMainViewCollectionViewCell.cellIdentifier,
-                cellType: GIPMainViewCollectionViewCell.self)) { row, element, cell in
-                    cell.configure(element!)
-                }.disposed(by: disposeBag)
-        
         mainView.collectionView.rx.itemSelected
               .subscribe(onNext: { indexPath in
                   self.coordinator?.showDetail()
