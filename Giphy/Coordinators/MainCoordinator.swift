@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class MainCoordinator: Coordinator {
     
@@ -34,8 +36,9 @@ final class MainCoordinator: Coordinator {
     }
     
     // MARK: - Detail method
-    func showDetail() {
-        let detailViewController = GIPDetailViewController()
+    func showDetail(_ gif: String) {
+        let detailViewController = GIPDetailViewController(gif)
+        detailViewController.viewModel = GIPDetailViewViewModel()
         navigationController.pushViewController(detailViewController, animated: true)
     }
 }

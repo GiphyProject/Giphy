@@ -13,6 +13,7 @@
 		7705CCB12A01578100F33D80 /* GIPMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB02A01578100F33D80 /* GIPMainModel.swift */; };
 		7705CCB42A01589A00F33D80 /* GIPNetworkServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB32A01589A00F33D80 /* GIPNetworkServiceExtensions.swift */; };
 		7705CCB62A015A7700F33D80 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB52A015A7700F33D80 /* NetworkService.swift */; };
+		7705CCB92A02B80000F33D80 /* GIPDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CCB82A02B80000F33D80 /* GIPDetailViewViewModel.swift */; };
 		7715C17329FA5136003A48CB /* GIPDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715C17229FA5136003A48CB /* GIPDetailView.swift */; };
 		7715C17929FA7CA8003A48CB /* GIPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7715C17829FA7CA8003A48CB /* GIPDetailViewController.swift */; };
 		77AB639B29F6538B00D932D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AB639A29F6538B00D932D6 /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		7705CCB02A01578100F33D80 /* GIPMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPMainModel.swift; sourceTree = "<group>"; };
 		7705CCB32A01589A00F33D80 /* GIPNetworkServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPNetworkServiceExtensions.swift; sourceTree = "<group>"; };
 		7705CCB52A015A7700F33D80 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7705CCB82A02B80000F33D80 /* GIPDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPDetailViewViewModel.swift; sourceTree = "<group>"; };
 		7715C17229FA5136003A48CB /* GIPDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPDetailView.swift; sourceTree = "<group>"; };
 		7715C17829FA7CA8003A48CB /* GIPDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPDetailViewController.swift; sourceTree = "<group>"; };
 		77AB639729F6538B00D932D6 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,14 @@
 				7705CCB52A015A7700F33D80 /* NetworkService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		7705CCB72A02B7F100F33D80 /* DetailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7705CCB82A02B80000F33D80 /* GIPDetailViewViewModel.swift */,
+			);
+			path = DetailViewModel;
 			sourceTree = "<group>";
 		};
 		7715C17129FA511C003A48CB /* DetailView */ = {
@@ -319,6 +329,7 @@
 		7967313029F6B894008D2D0D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7705CCB72A02B7F100F33D80 /* DetailViewModel */,
 				77D9227E29F79E9800A1111E /* MainViewModel */,
 			);
 			path = ViewModels;
@@ -625,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7705CCB92A02B80000F33D80 /* GIPDetailViewViewModel.swift in Sources */,
 				7705CCB62A015A7700F33D80 /* NetworkService.swift in Sources */,
 				7705CCB42A01589A00F33D80 /* GIPNetworkServiceExtensions.swift in Sources */,
 				79A7622E29F944F900FCC907 /* XCAssets+Generated.swift in Sources */,

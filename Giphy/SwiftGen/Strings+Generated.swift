@@ -14,10 +14,14 @@ internal enum Str {
   internal static let apiKey = Str.tr("Localizable", "apiKey", fallback: "?api_key=BYE4QVgVRnoWvrhBi9WuBya9RazSH4yT")
   /// https://api.giphy.com/v1/gifs/trending
   internal static let baseAPIRUL = Str.tr("Localizable", "baseAPIRUL", fallback: "https://api.giphy.com/v1/gifs/trending")
+  /// heart.fill
+  internal static let likeButton = Str.tr("Localizable", "likeButton", fallback: "heart.fill")
   /// &limit=
   internal static let limit = Str.tr("Localizable", "limit", fallback: "&limit=")
   /// 10
   internal static let requestNumber = Str.tr("Localizable", "requestNumber", fallback: "10")
+  /// paperplane.fill
+  internal static let shareButton = Str.tr("Localizable", "shareButton", fallback: "paperplane.fill")
   /// Localizable.strings
   ///   Giphy
   /// 
