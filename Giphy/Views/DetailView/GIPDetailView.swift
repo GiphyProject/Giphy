@@ -17,8 +17,8 @@ final class GIPDetailView: UIView {
     // MARK: - UI elements
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .black
+        imageView.contentMode = .scaleToFill
+        imageView.backgroundColor = .tertiarySystemBackground
         imageView.layer.cornerRadius = 10
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.5
@@ -30,7 +30,7 @@ final class GIPDetailView: UIView {
     private let likeButton: UIButton = {
         let button = UIButton()
         let image = UIImage(
-            systemName: "heart.fill",
+            systemName: Str.likeButton,
             withConfiguration: UIImage.SymbolConfiguration(pointSize: 80, weight: .regular)
         )
         button.setImage(image, for: .normal)
@@ -41,7 +41,7 @@ final class GIPDetailView: UIView {
     private let shareButton: UIButton = {
         let button = UIButton()
         let image = UIImage(
-            systemName: "paperplane.fill",
+            systemName: Str.shareButton,
             withConfiguration: UIImage.SymbolConfiguration(pointSize: 75, weight: .regular)
         )
         button.setImage(image, for: .normal)
@@ -70,7 +70,6 @@ final class GIPDetailView: UIView {
     
     // MARK: - Setup appearance
     private func setupAppearance() {
-        imageView.image = UIImage(named: "detail.png")
     }
     
     // MARK: - Setup behavior

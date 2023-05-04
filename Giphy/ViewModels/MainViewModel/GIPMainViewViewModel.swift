@@ -15,7 +15,7 @@ final class GIPMainViewViewModel: NSObject {
     private var networkService: NetworkService = NetworkService()
     private let disposeBag = DisposeBag()
     private let group = DispatchGroup()
-    private var gifs = [String]()
+    var gifs = [String]()
     
     required override init() {
         super.init()
@@ -31,9 +31,9 @@ final class GIPMainViewViewModel: NSObject {
                 case .success(let model):
                     // TODO: - изменить 0..< на константу
                     for number in 0..<10 {
-//                        self.gifs.append(model.data[number].url)
+                        //                        self.gifs.append(model.data[number].url)
                         self.gifs.append(model.data[number].images.fixedHeight.url)
-
+                        
                     }
                     do {
                         self.group.leave()
@@ -47,6 +47,7 @@ final class GIPMainViewViewModel: NSObject {
     
     func fetchData(_ view: GIPMainView) {
         group.notify(queue: .main) {
+            // TODO: - Изменить логику из-за того, что при каждом запуске происходит загрузка данных из сети
             let selfGifs = Observable.of(self.gifs)
             selfGifs
                 .bind(to: view.collectionView.rx.items(
@@ -55,9 +56,5 @@ final class GIPMainViewViewModel: NSObject {
                         cell.configure(element as! String) // FORCE UNWRAP
                     }.disposed(by: self.disposeBag)
         }
-    }
-    
-    func bindGifsToCollectionViewCell() {
-        
     }
 }

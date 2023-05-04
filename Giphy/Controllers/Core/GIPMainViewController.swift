@@ -12,6 +12,7 @@ import RxCocoa
 
 final class GIPMainViewController: UIViewController {
     
+    // TODO: - сделать инъекцию mainView через координатор для всех контроллеров
     private let mainView = GIPMainView()
     private let disposeBag = DisposeBag()
     var viewModel: GIPMainViewViewModel?
@@ -23,7 +24,6 @@ final class GIPMainViewController: UIViewController {
         embedView()
         setupBehavior()
         setupConstraints()
-        setupCollectionView()
         viewModel?.fetchData(mainView)
     }
     
@@ -36,6 +36,13 @@ final class GIPMainViewController: UIViewController {
     private func setupBehavior() {
         view.backgroundColor = .systemBackground
         title = Str.titleMainViewController
+        
+        guard let viewModel = self.viewModel else { return }
+        mainView.collectionView.rx.itemSelected
+              .subscribe(onNext: { indexPath in
+                  self.coordinator?.showDetail(viewModel.gifs[indexPath.row])
+              })
+              .disposed(by: disposeBag)
     }
     
     // MARK: - Setup constraints
@@ -43,14 +50,5 @@ final class GIPMainViewController: UIViewController {
         mainView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
-    }
-    
-    // MARK: - Setup collection view
-    func setupCollectionView() {
-        mainView.collectionView.rx.itemSelected
-              .subscribe(onNext: { indexPath in
-                  self.coordinator?.showDetail()
-              })
-              .disposed(by: disposeBag)
     }
 }
