@@ -7,8 +7,7 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
+import Kingfisher
 
 final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     
@@ -21,6 +20,8 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         return imageView
     }()
+    
+//    private let imageView = AnimatedImageView()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -57,8 +58,7 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(130)
-            make.width.equalTo(160)
+            make.height.width.equalToSuperview()
         }
     }
     
@@ -76,7 +76,8 @@ final class GIPMainViewCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Configure cells
-    public func configure(_ image: UIImage) {
-        imageView.image = image
+    public func configure(_ url: String) {
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: URL(string: url))
     }
 }

@@ -12,12 +12,11 @@ import RxCocoa
 
 final class GIPMainViewController: UIViewController {
     
+    // TODO: - сделать инъекцию mainView через координатор для всех контроллеров
     private let mainView = GIPMainView()
     private let disposeBag = DisposeBag()
     var viewModel: GIPMainViewViewModel?
     var coordinator: MainCoordinator?
-    
-    var items = Observable.of([UIImage(systemName: "house"), UIImage(systemName: "pencil.circle")])
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,7 +24,7 @@ final class GIPMainViewController: UIViewController {
         embedView()
         setupBehavior()
         setupConstraints()
-        setupCollectionView()
+        viewModel?.fetchData(mainView)
     }
     
     // MARK: - Embed view
@@ -37,6 +36,13 @@ final class GIPMainViewController: UIViewController {
     private func setupBehavior() {
         view.backgroundColor = .systemBackground
         title = Str.titleMainViewController
+        
+        guard let viewModel = self.viewModel else { return }
+        mainView.collectionView.rx.itemSelected
+              .subscribe(onNext: { indexPath in
+                  self.coordinator?.showDetail(viewModel.gifs[indexPath.row])
+              })
+              .disposed(by: disposeBag)
     }
     
     // MARK: - Setup constraints
@@ -44,21 +50,5 @@ final class GIPMainViewController: UIViewController {
         mainView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
-    }
-    
-    // MARK: - Setup collection view
-    func setupCollectionView() {
-        items
-            .bind(to: mainView.collectionView.rx.items(
-                cellIdentifier: GIPMainViewCollectionViewCell.cellIdentifier,
-                cellType: GIPMainViewCollectionViewCell.self)) { row, element, cell in
-                    cell.configure(element!)
-                }.disposed(by: disposeBag)
-        
-        mainView.collectionView.rx.itemSelected
-              .subscribe(onNext: { indexPath in
-                  self.coordinator?.showDetail()
-              })
-              .disposed(by: disposeBag)
     }
 }

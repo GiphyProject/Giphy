@@ -9,6 +9,7 @@ target 'Giphy' do
   pod 'SnapKit'
   pod 'SwiftLint'
   pod 'SwiftGen'
+  pod 'Kingfisher'
 
   # Pods for Giphy
 
