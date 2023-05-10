@@ -39,6 +39,9 @@
 		7967313B29F6BDBC008D2D0D /* GIPSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967313A29F6BDBC008D2D0D /* GIPSearchViewController.swift */; };
 		7967313D29F6BDCC008D2D0D /* GIPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967313C29F6BDCC008D2D0D /* GIPProfileViewController.swift */; };
 		79A7622E29F944F900FCC907 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A7622D29F944F900FCC907 /* XCAssets+Generated.swift */; };
+		79DF7BAD2A027D1700194DFE /* GIPStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF7BAC2A027D1700194DFE /* GIPStartViewController.swift */; };
+		79DF7BAF2A028CD300194DFE /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF7BAE2A028CD300194DFE /* StartCoordinator.swift */; };
+		79DF7BB22A028D3100194DFE /* GIPStartViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF7BB12A028D3100194DFE /* GIPStartViewViewModel.swift */; };
 		81594905EE647EDCF5A44F5F /* Pods_Giphy_GiphyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7DF404E72CE752F3F07C613 /* Pods_Giphy_GiphyUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		7967313A29F6BDBC008D2D0D /* GIPSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPSearchViewController.swift; sourceTree = "<group>"; };
 		7967313C29F6BDCC008D2D0D /* GIPProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPProfileViewController.swift; sourceTree = "<group>"; };
 		79A7622D29F944F900FCC907 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		79DF7BAC2A027D1700194DFE /* GIPStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPStartViewController.swift; sourceTree = "<group>"; };
+		79DF7BAE2A028CD300194DFE /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
+		79DF7BB12A028D3100194DFE /* GIPStartViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIPStartViewViewModel.swift; sourceTree = "<group>"; };
 		A50218D1854158CAF9BDB46F /* Pods-GiphyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyTests.release.xcconfig"; path = "Target Support Files/Pods-GiphyTests/Pods-GiphyTests.release.xcconfig"; sourceTree = "<group>"; };
 		C74072F6A826EB5D8A8FDDC3 /* Pods-Giphy-GiphyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy-GiphyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Giphy-GiphyUITests/Pods-Giphy-GiphyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7DF404E72CE752F3F07C613 /* Pods_Giphy_GiphyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy_GiphyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				77D9228429F8082000A1111E /* Coordinator.swift */,
+				79DF7BAE2A028CD300194DFE /* StartCoordinator.swift */,
 				77B8AD9529FACBDC00C80CFE /* MainCoordinator.swift */,
 				77B8AD9729FAD1F200C80CFE /* SearchCoordinator.swift */,
 				77B8AD9929FAD28500C80CFE /* ProfileCoordinator.swift */,
@@ -303,6 +310,7 @@
 		7967312D29F6B876008D2D0D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				79DF7BAC2A027D1700194DFE /* GIPStartViewController.swift */,
 				77D9228029F79EBA00A1111E /* Tab bar */,
 				77D9227F29F79EAD00A1111E /* Core */,
 			);
@@ -329,7 +337,7 @@
 		7967313029F6B894008D2D0D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7705CCB72A02B7F100F33D80 /* DetailViewModel */,
+				79DF7BB02A028D1E00194DFE /* StartViewModel */,
 				77D9227E29F79E9800A1111E /* MainViewModel */,
 			);
 			path = ViewModels;
@@ -346,6 +354,14 @@
 				77D9227729F7999800A1111E /* Extensions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		79DF7BB02A028D1E00194DFE /* StartViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79DF7BB12A028D3100194DFE /* GIPStartViewViewModel.swift */,
+			);
+			path = StartViewModel;
 			sourceTree = "<group>";
 		};
 		B3D134CD0F6BF8D8F7A0D1F4 /* Frameworks */ = {
@@ -646,6 +662,7 @@
 				7967313B29F6BDBC008D2D0D /* GIPSearchViewController.swift in Sources */,
 				77AB639B29F6538B00D932D6 /* AppDelegate.swift in Sources */,
 				7715C17329FA5136003A48CB /* GIPDetailView.swift in Sources */,
+				79DF7BAF2A028CD300194DFE /* StartCoordinator.swift in Sources */,
 				77B8AD9629FACBDC00C80CFE /* MainCoordinator.swift in Sources */,
 				77B8AD9A29FAD28500C80CFE /* ProfileCoordinator.swift in Sources */,
 				77B8AD9829FAD1F200C80CFE /* SearchCoordinator.swift in Sources */,
@@ -654,8 +671,9 @@
 				7705CCAF2A0156E600F33D80 /* GIPNetworkServiceProtocol.swift in Sources */,
 				7967313D29F6BDCC008D2D0D /* GIPProfileViewController.swift in Sources */,
 				77AB63A529F6538B00D932D6 /* Giphy.xcdatamodeld in Sources */,
-				7705CCB12A01578100F33D80 /* GIPMainModel.swift in Sources */,
+				79DF7BAD2A027D1700194DFE /* GIPStartViewController.swift in Sources */,
 				77D9227629F7991400A1111E /* GIPMainView.swift in Sources */,
+				79DF7BB22A028D3100194DFE /* GIPStartViewViewModel.swift in Sources */,
 				7967313929F6BDA5008D2D0D /* GIPMainViewController.swift in Sources */,
 				7715C17929FA7CA8003A48CB /* GIPDetailViewController.swift in Sources */,
 				77D9227A29F79A1B00A1111E /* GIPMainViewCollectionViewCell.swift in Sources */,
