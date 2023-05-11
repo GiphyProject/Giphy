@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import SOTabBar
 
-final class GIPTabViewController: UITabBarController {
+final class GIPTabViewController: SOTabBarController {
     
     private var coordinators: [Coordinator] = []
+    
+    override func loadView() {
+        super.loadView()
+        SOTabBarSetting.tabBarTintColor = Asset.orange.color
+        SOTabBarSetting.tabBarCircleSize = CGSize(width: 60, height: 60)
+        SOTabBarSetting.tabBarHeight = 50.0
+        SOTabBarSetting.tabBarBackground = Asset.gray.color
+        SOTabBarSetting.tabBarSizeImage = 38
+        SOTabBarSetting.tabBarSizeSelectedImage = 30
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
     }
-    
+
     // MARK: - TabBars
     private func setupTabs() {
         
