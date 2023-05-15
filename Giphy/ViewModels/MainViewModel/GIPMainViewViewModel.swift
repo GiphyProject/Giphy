@@ -31,9 +31,7 @@ final class GIPMainViewViewModel: NSObject {
                 case .success(let model):
                     // TODO: - изменить 0..< на константу
                     for number in 0..<10 {
-                        //                        self.gifs.append(model.data[number].url)
                         self.gifs.append(model.data[number].images.fixedHeight.url)
-                        
                     }
                     do {
                         self.group.leave()

@@ -7,12 +7,8 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 final class GIPDetailView: UIView {
-    
-    private let disposeBag = DisposeBag()
     
     // MARK: - UI elements
     let imageView: UIImageView = {
@@ -27,7 +23,7 @@ final class GIPDetailView: UIView {
         return imageView
     }()
     
-    private let likeButton: UIButton = {
+     let likeButton: UIButton = {
         let button = UIButton()
         let image = UIImage(
             systemName: Str.likeButton,
@@ -56,7 +52,6 @@ final class GIPDetailView: UIView {
         setupConstraints()
         setupAppearance()
         setupBehavior()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -74,7 +69,6 @@ final class GIPDetailView: UIView {
     
     // MARK: - Setup behavior
     private func setupBehavior() {
-        buttonActions()
     }
     
     // MARK: - Setup constraints
@@ -99,13 +93,5 @@ final class GIPDetailView: UIView {
             make.trailing.equalTo(imageView.snp.trailing).offset(-20)
             make.top.equalTo(imageView.snp.bottom).offset(35)
         }
-    }
-    
-    // MARK: - Button actions
-    private func buttonActions() {
-        likeButton.rx.controlEvent(.touchUpInside)
-            .subscribe(onNext: {
-                print("TEXT")
-            }).disposed(by: disposeBag)
     }
 }

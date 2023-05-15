@@ -10,6 +10,7 @@ import UIKit
 final class GIPTabViewController: UITabBarController {
     
     private var coordinators: [Coordinator] = []
+    private var profileModel = GIPProfileModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ final class GIPTabViewController: UITabBarController {
     // MARK: - TabBars
     private func setupTabs() {
         
-        let mainViewCoordinator = MainCoordinator(navigationController: UINavigationController())
+        let mainViewCoordinator = MainCoordinator(navigationController: UINavigationController(), profileModel: profileModel)
         let mainViewController = mainViewCoordinator.start()
         coordinators.append(mainViewCoordinator)
         
@@ -27,7 +28,7 @@ final class GIPTabViewController: UITabBarController {
         let searchViewController = searchViewCoordinator.start()
         coordinators.append(searchViewCoordinator)
         
-        let profileViewCoordinator = ProfileCoordinator(navigationController: UINavigationController())
+        let profileViewCoordinator = ProfileCoordinator(navigationController: UINavigationController(), profileModel: profileModel)
         let profileViewController = profileViewCoordinator.start()
         coordinators.append(profileViewCoordinator)
         
