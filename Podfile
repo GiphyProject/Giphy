@@ -10,6 +10,7 @@ target 'Giphy' do
   pod 'SwiftLint'
   pod 'SwiftGen'
   pod 'Kingfisher'
+  pod 'SOTabBar'
 
   # Pods for Giphy
 
