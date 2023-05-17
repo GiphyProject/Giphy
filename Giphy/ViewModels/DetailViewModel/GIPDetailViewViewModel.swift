@@ -17,7 +17,5 @@ final class GIPDetailViewViewModel: NSObject {
     func addToFavorites(_ gif: String) {
         let newGif = profileModel.favoriteGifs.value + [gif]
         profileModel.favoriteGifs.accept(newGif)
-        
-        
     }
 }

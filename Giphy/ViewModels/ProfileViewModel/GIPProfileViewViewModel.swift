@@ -18,7 +18,8 @@ final class GIPProfileViewViewModel: NSObject {
     }
     
     func cellBindingWithGifs(_ view: GIPProfileView) {
-        print(model.observeGifs())
+        view.collectionView.delegate = nil
+        view.collectionView.dataSource = nil
         model.observeGifs()
             .bind(to: view.collectionView.rx.items(
                 cellIdentifier: GIPProfileViewCollectionViewCell.cellIdentifier,
