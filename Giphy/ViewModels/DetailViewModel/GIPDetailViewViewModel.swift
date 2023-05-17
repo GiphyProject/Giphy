@@ -8,5 +8,14 @@
 import Foundation
 
 final class GIPDetailViewViewModel: NSObject {
-
+    private let profileModel: GIPProfileModel
+    
+    init(profileModel: GIPProfileModel) {
+        self.profileModel = profileModel
+    }
+    
+    func addToFavorites(_ gif: String) {
+        let newGif = profileModel.favoriteGifs.value + [gif]
+        profileModel.favoriteGifs.accept(newGif)
+    }
 }

@@ -8,15 +8,19 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class GIPDetailViewController: UIViewController {
     
-    var viewModel: GIPDetailViewViewModel?
+    private let viewModel: GIPDetailViewViewModel
     private let detailView = GIPDetailView()
+    private let disposeBag = DisposeBag()
     private var gif: String
     
-    init(_ gif: String) {
+    init(_ gif: String, viewModel: GIPDetailViewViewModel) {
         self.gif = gif
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,6 +35,7 @@ class GIPDetailViewController: UIViewController {
         setupAppearance()
         setupBehavior()
         setupConstraints()
+        buttonActions()
     }
     
     // MARK: - Embed view
@@ -53,5 +58,13 @@ class GIPDetailViewController: UIViewController {
         detailView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
+    }
+    
+    // MARK: - Button actions
+    private func buttonActions() {
+        detailView.likeButton.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: {
+                    self.viewModel.addToFavorites(self.gif)
+            }).disposed(by: disposeBag)
     }
 }

@@ -1,22 +1,21 @@
 //
-//  GIPMainViewCollectionViewCell.swift
+//  GIPProfileViewCollectionViewCell.swift
 //  Giphy
 //
-//  Created by Адель Ахметшин on 25.04.2023.
+//  Created by Адель Ахметшин on 10.05.2023.
 //
 
 import UIKit
 import SnapKit
 import Kingfisher
 
-final class GIPMainViewCollectionViewCell: UICollectionViewCell {
-    
-    static let cellIdentifier = "GIPMainViewCollectionViewCell"
+class GIPProfileViewCollectionViewCell: UICollectionViewCell {
+    static let cellIdentifier = "GIPProfileViewCollectionViewCell"
     
     // MARK: - UI elements
-     let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let imageView = UIImageView()
-         imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()

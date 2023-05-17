@@ -9,7 +9,6 @@ import UIKit
 
 final class GIPSearchViewController: UIViewController {
     
-
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

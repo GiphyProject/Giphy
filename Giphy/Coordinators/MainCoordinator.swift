@@ -13,10 +13,12 @@ import RxCocoa
 final class MainCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var profileModel: GIPProfileModel
     
     // MARK: - Init
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, profileModel: GIPProfileModel) {
         self.navigationController = navigationController
+        self.profileModel = profileModel
     }
     
     // MARK: - Start method
@@ -37,8 +39,8 @@ final class MainCoordinator: Coordinator {
     
     // MARK: - Detail method
     func showDetail(_ gif: String) {
-        let detailViewController = GIPDetailViewController(gif)
-        detailViewController.viewModel = GIPDetailViewViewModel()
+        let detailViewViewModel = GIPDetailViewViewModel(profileModel: profileModel)
+        let detailViewController = GIPDetailViewController(gif, viewModel: detailViewViewModel)
         navigationController.pushViewController(detailViewController, animated: true)
     }
 }

@@ -161,4 +161,3 @@ struct Pagination: Codable {
         case count, offset
     }
 }
-

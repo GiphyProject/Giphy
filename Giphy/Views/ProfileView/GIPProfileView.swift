@@ -1,14 +1,14 @@
 //
-//  GIPMainView.swift
+//  GIPProfileView.swift
 //  Giphy
 //
-//  Created by Адель Ахметшин on 25.04.2023.
+//  Created by Адель Ахметшин on 04.05.2023.
 //
 
 import UIKit
 import SnapKit
 
-final class GIPMainView: UIView {
+final class GIPProfileView: UIView {
     
     // MARK: - UI elements
     let collectionView: UICollectionView = {
@@ -18,7 +18,7 @@ final class GIPMainView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
-    
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,15 +33,16 @@ final class GIPMainView: UIView {
     
     // MARK: - Settings
     private func embedView() {
-        addSubview(collectionView)
+        addSubviews(collectionView)
     }
     
     // MARK: - Setup behavior
     private func setupBehavior() {
+        backgroundColor = .green
         collectionView.collectionViewLayout = createCompositionLayout()
         collectionView.register(
-            GIPMainViewCollectionViewCell.self,
-            forCellWithReuseIdentifier: GIPMainViewCollectionViewCell.cellIdentifier
+            GIPProfileViewCollectionViewCell.self,
+            forCellWithReuseIdentifier: GIPProfileViewCollectionViewCell.cellIdentifier
         )
     }
     

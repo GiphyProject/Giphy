@@ -15,7 +15,7 @@ final class GIPMainViewController: UIViewController {
     // TODO: - сделать инъекцию mainView через координатор для всех контроллеров
     private let mainView = GIPMainView()
     private let disposeBag = DisposeBag()
-    var viewModel: GIPMainViewViewModel?
+    var viewModel: GIPMainViewViewModel? // init
     var coordinator: MainCoordinator?
     
     // MARK: - Lifecycle
